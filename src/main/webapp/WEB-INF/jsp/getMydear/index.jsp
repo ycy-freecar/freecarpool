@@ -8,7 +8,7 @@
     <form action="/info/infoList">
         <div class="route-select-wrap">
             <div class="route-start-wrap">
-                <p class="route-title">出发地：</p>
+                <p class="route-title">出发地haha：</p>
                 <div class="route-list-wrap">
                     省：
                     <select id="from_province" name="from_province" class="js-city-info" data-child="from_city">
