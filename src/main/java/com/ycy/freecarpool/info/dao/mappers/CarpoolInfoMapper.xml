@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ycy.freecarpool.info.dao.CarpoolInfoMapper">
+    <resultMap id="carpoolInfo" type="com.ycy.freecarpool.info.bean.CarpoolInfo" >
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="from_code" property="fromCode"/>
+        <result column="from_name" property="fromName"/>
+        <result column="to_code" property="toCode"/>
+        <result column="to_name" property="toName"/>
+        <result column="info_type" property="infoType"/>
+        <result column="mobile" property="mobile"/>
+        <result column="go_time" property="goTime"/>
+        <result column="user_name" property="userName"/>
+        <result column="user_count" property="userCount"/>
+        <result column="create_time" property="createTime"/>
+        <result column="remark" property="remark"/>
+    </resultMap>
+
+    <sql id="insertColumn">
+        from_code,from_name,to_code,to_name,info_type,mobile,go_time,user_name,user_count,create_time,remark
+    </sql>
+
+    <insert id="insertOne" parameterType="carpoolInfo">
+        insert into carpool_info (<include refid="insertColumn"/>) values (
+          #{fromCode},#{fromName},#{toCode},#{toName},#{infoType},#{mobile},#{goTime},#{userName},#{userCount},#{createTime},#{remark}
+        )
+    </insert>
+
+    <select id="queryList" resultMap="carpoolInfo" parameterType="carpoolInfo">
+        select from_code,from_name,to_code,to_name,info_type,mobile,date_format(go_time,'%Y-%m-%d %H:%i:%s') as go_time,
+        user_name,user_count,remark,create_time from carpool_info
+        <where>
+            <if test="infoType!=null and infoType!=''">
+                and info_type=#{infoType}
+            </if>
+            <if test="fromCode!=null and fromCode!=''">
+                and from_code=#{fromCode}
+            </if>
+            <if test="toCode!=null and toCode!=''">
+                and to_code=#{toCode}
+            </if>
+            <if test="checkDate!=null">
+                and go_time &gt;= #{checkDate}
+            </if>
+        </where>
+        order by create_time desc
+    </select>
+
+    <select id="queryCount" resultType="int" parameterType="carpoolInfo">
+        select count(1) from carpool_info
+        where from_code=#{fromCode}
+        and to_code=#{toCode}
+        and info_type=#{infoType}
+        and user_name=#{userName}
+        and go_time=#{goTime}
+    </select>
+</mapper>

@@ -1,0 +1,203 @@
+/*@font-face {*/
+    /*font-family: weiruanyahei;*/
+    /*src: url(../fonts/msyh.ttf);*/
+/*}*/
+
+html, body, .content-main {
+    margin:0px;
+    height: auto;
+    /* background-color: #f7f7f7; */
+    background-color: #efefef;
+    font-family: 'Microsoft Yahei',Arial,Helvetica,Simsun,sans-serif;
+
+}
+ul,li{margin:0;padding:0;}
+.header {
+    height: 60px;
+    width: 100%;
+<!--background-image: -webkit-gradient(linear, left top, left bottom, from(#2c3742),
+to(#28303a));-->
+<!--background-image: -webkit-linear-gradient(top, #2c3742, #28303a);-->
+<!--background-image: -moz-linear-gradient(top, #2c3742, #28303a);-->
+    background-image: -ms-linear-gradient(top, #2c3742, #28303a);
+    background-image: -o-linear-gradient(top, #2c3742, #28303a);
+    background-image: linear-gradient(top, #2c3742, #28303a);
+    filter: progid: DXImageTransform.Microsoft.Gradient(startColorStr='#2c3742',
+    endColorStr='#28303a', gradientType=0);
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    background-image: url(../../images/top.jpg);
+    background-size: 100% 100%;
+}
+
+.title{
+    float:left;
+    height:60px;
+    margin-left:30px;
+    font-size: 40px;
+    position: relative;
+}
+.title>a{
+    text-decoration: none;
+}
+.userinfo{
+    float: right;
+    height: 50px;
+    margin-right: 50px;
+    line-height:60px;
+}
+.userinfo a{
+    text-decoration: none;
+    font-family: weiruanyahei;
+    font-size: 12px;
+    color:#000000;
+}
+
+.header>span {
+    display: block;
+}
+
+.header>span>a {
+    font-size: 14px;
+    width: auto;
+    padding: 10px 10px;
+    color: #fff;
+    line-height: 50px;
+    text-decoration: none;
+}
+
+.main {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-top: 110px;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+.main_title{
+    font-size:16px;
+    width:100%;
+    margin-left:30px;
+    line-height: 60px;
+}
+.com_condition{
+    width:100%;
+    margin-left:25px;
+    border-radius:5px;
+    background-color:#fff;
+    padding:10px;
+    height:79px;
+}
+.com_condition table{
+    width:100%;
+    padding:10px;
+    border:0px solid #fff !important;
+}
+.com_condition table td{
+    border:0px solid #fff !important;
+    line-height: 32px !important;
+}
+.main_condition{
+    width:100%;
+    margin-left:25px;
+    border-radius:5px;
+    background-color:#fff;
+    padding:10px;
+    height:79px;
+}
+.main_condition table{
+    width:700px;
+    padding:10px;
+    border:0px solid #fff !important;
+}
+.main_condition table td{
+    border:0px solid #fff !important;
+    line-height: 32px !important;
+}
+
+.main_list{
+    float:left;
+    width:98%;
+    margin-top:15px;
+    margin-left:25px;
+}
+
+.side {
+    background:#1388e0;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    position: fixed;
+    top: 60px;
+    width: 100%;
+    margin-left:0%;
+    z-index: 2;
+}
+
+.side-menu {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    zoom: 1;
+}
+.side-menu .first{
+    float: left;
+    width: 10%;
+    position: relative;
+}
+
+.ui-menu {
+    list-style: none;
+    padding-right: 15px;
+    margin-bottom: 0;
+}
+
+.ui-menu>li>a {
+    color:#b8e1ff;
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    padding-left: 30px;
+    outline: 0 none;
+    width: 100%;
+    line-height: 50px;
+}
+.ui-menu>li>a:hover {
+    color: #fff;
+    background:#0878cd;
+    text-decoration: none;
+}
+
+.ui-menu>li>a.active {
+    color: #33455a;
+    text-decoration: none;
+}
+
+.ui-menu>.active>a {
+    color: #33455a;
+    text-decoration: none;
+    border-bottom: 0px;
+    box-shadow: none;
+}
+
+.ui-menu>.active {
+    position: relative;
+}
+
+.ui-menu>.active .submenu {
+    display: block;
+}
+
+.ui-menu>li>a .fa {
+    margin-right: 15px;
+    font-size: 16px;
+}
+
+.userinfo a:HOVER{
+    color:#63a8c2;
+}

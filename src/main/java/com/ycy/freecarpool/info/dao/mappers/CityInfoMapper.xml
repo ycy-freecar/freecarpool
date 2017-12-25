@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ycy.freecarpool.info.dao.CityInfoMapper">
+    <resultMap id="cityInfo" type="com.ycy.freecarpool.info.bean.CityInfo" >
+        <id column="city_code" property="cityCode"/>
+        <result column="city_name" property="cityName"/>
+        <result column="full_name" property="fullName"/>
+        <result column="abbe_name" property="abbeName"/>
+        <result column="parent_name" property="parentName"/>
+        <result column="parent_code" property="parentCode"/>
+        <result column="city_level" property="cityLevel"/>
+    </resultMap>
+
+    <sql id="insertColumn">
+        city_code,city_name,full_name,abbe_name,parent_name,parent_code,city_level
+    </sql>
+
+    <insert id="insertOne" parameterType="com.ycy.freecarpool.info.bean.CityInfo">
+        insert into city_info (<include refid="insertColumn"/>) values (
+        #{cityCode},#{cityName},#{fullName},#{abbeName},#{parentName},#{parentCode},#{cityLevel}
+        )
+    </insert>
+
+    <select id="queryList" resultMap="cityInfo" parameterType="com.ycy.freecarpool.info.bean.CityInfo">
+        select * from city_info
+        <where>
+            <if test="cityLevel!=null and cityLevel!=''">
+                and city_level=#{cityLevel}
+            </if>
+            <if test="cityCode!=null and cityCode!=''">
+                and city_code=#{cityCode}
+            </if>
+            <if test="parentCode!=null and parentCode!=''">
+                and parent_code=#{parentCode}
+            </if>
+        </where>
+    </select>
+
+    <select id="getNameByCode" parameterType="string" resultType="string">
+        select city_name from city_info where city_code = #{0}
+    </select>
+</mapper>
