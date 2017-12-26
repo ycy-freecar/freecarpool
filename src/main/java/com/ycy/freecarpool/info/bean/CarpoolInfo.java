@@ -1,5 +1,6 @@
 package com.ycy.freecarpool.info.bean;
 
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -23,6 +24,7 @@ public class CarpoolInfo {
     private String createTimeShow;
     private Date checkDate;
     private String remark;
+    private String tripOver;
 
     public int getId() {
         return id;
@@ -157,5 +159,17 @@ public class CarpoolInfo {
 
     public void setCreateTimeShow(String createTimeShow) {
         this.createTimeShow = createTimeShow;
+    }
+
+    public String getTripOver() throws Exception{
+        //行程结束标识符
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        Date tripDate = df.parse(goTime);
+        Date currentDate = df.parse(df.format(new Date()));
+        if (tripDate.before(currentDate)) {
+            return "1";
+        } else {
+            return "0";
+        }
     }
 }

@@ -25,30 +25,6 @@
         </div>
     </header>
 
-
-
-    <div class="weui-tab">
-        <div class="weui-navbar">
-            <div class="weui-navbar__item weui-bar__item_on">
-                人找车
-            </div>
-            <div class="weui-navbar__item">
-                车找人
-            </div>
-            <div class="weui-navbar__item">
-                长期服务
-            </div>
-        </div>
-        <div class="weui-tab__panel">
-            <div>Page 1</div>
-            <div style="display:none">Page 2</div>
-            <div style="display:none">Page 3</div>
-        </div>
-    </div>
-
-    <div>
-        <input class="weui-input" type="date" placeholder="按出行日期筛选"/>
-    </div>
     <!--人找车 车找人-->
     <div class="choice-type-wrap">
         <input type="hidden" value="infoList" id="titleFlag"/>

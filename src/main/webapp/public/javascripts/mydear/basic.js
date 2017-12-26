@@ -174,7 +174,11 @@ function freshList(){
                         "<p><i>姓名：</i><span>"+info.userName+"</span><span class='create_time'>发布于："+info.createTimeShow+"</span></p>"+
                         "<p><i>人数：</i><span>"+info.userCount+"</span></p>"+
                         "<p><i>日期：</i><span>"+info.goTime+"</span></p>"+
-                        "<p><i>备注：</i><span>"+info.remark+"</span></p></li>"
+                        "<p><i>备注：</i><span>"+info.remark+"</span></p>";
+                    if (info.tripOver == "1") {
+                        html+= "<span class='seal_over'></span>";
+                    }
+                    html+="</li>";
                     ulBox.append(html);
                 }
                 var infoLen = ulBox.children().length;

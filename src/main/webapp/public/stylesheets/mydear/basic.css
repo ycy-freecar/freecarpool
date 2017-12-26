@@ -321,6 +321,17 @@ header.header-address-wrap {
 .info-ul-wrap li span {
     margin-left: 0.2rem;
 }
+.info-ul-wrap li .seal_over{
+    width: 3.875rem;
+    height: 3.425rem;
+    position: absolute;
+    display: block;
+    top: 2.3rem;
+    left: 2.7rem;
+    background-image: url(/public/images/tripover.png);
+    background-repeat: no-repeat;
+    background-size: 4.1rem;
+}
 .info-ul-wrap li .create_time{
     font-size: 0.6rem;
     position: absolute;
