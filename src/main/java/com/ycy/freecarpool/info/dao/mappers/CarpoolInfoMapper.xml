@@ -27,7 +27,7 @@
     </insert>
 
     <select id="queryList" resultMap="carpoolInfo" parameterType="carpoolInfo">
-        select from_code,from_name,to_code,to_name,info_type,mobile,date_format(go_time,'%Y-%m-%d %H:%i:%s') as go_time,
+        select from_code,from_name,to_code,to_name,info_type,mobile,date_format(go_time,'%Y-%m-%d %H:%i') as go_time,
         user_name,user_count,remark,create_time from carpool_info
         <where>
             <if test="infoType!=null and infoType!=''">

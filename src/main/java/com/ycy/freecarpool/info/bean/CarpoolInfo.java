@@ -1,5 +1,7 @@
 package com.ycy.freecarpool.info.bean;
 
+import org.apache.commons.lang.StringUtils;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -25,6 +27,7 @@ public class CarpoolInfo {
     private Date checkDate;
     private String remark;
     private String tripOver;
+    private String goTimeShow;
 
     public int getId() {
         return id;
@@ -171,5 +174,17 @@ public class CarpoolInfo {
         } else {
             return "0";
         }
+    }
+
+    public void setTripOver(String tripOver) {
+        this.tripOver = tripOver;
+    }
+
+    public String getGoTimeShow() throws Exception{
+        return goTimeShow;
+    }
+
+    public void setGoTimeShow(String goTimeShow) {
+        this.goTimeShow = goTimeShow;
     }
 }

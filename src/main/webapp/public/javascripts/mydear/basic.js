@@ -158,6 +158,7 @@ function freshList(){
     var fromCode = $("#fromCode").val();
     var toCode = $("#toCode").val();
     var infoType = $(".active.js-to-choice").attr("data-type");
+    var name = infoType=="1"?"乘客":"车主";
     var ulBox = $(".info-ul-wrap");
     var notMsg = $(".blank-wrap");
     ulBox.empty();
@@ -171,7 +172,7 @@ function freshList(){
                 for (var i=0;i<infoList.length;i++) {
                     var info = infoList[i];
                     var html = "<li><a class='info-phone-wrap carpool-icon js-to-phone' href='tel:"+info.mobile+"'></a>"+
-                        "<p><i>姓名：</i><span>"+info.userName+"</span><span class='create_time'>发布于："+info.createTimeShow+"</span></p>"+
+                        "<p><i>"+name+"：</i><span>"+info.userName+"</span><span class='create_time'>发布于："+info.createTimeShow+"</span></p>"+
                         "<p><i>人数：</i><span>"+info.userCount+"</span></p>"+
                         "<p><i>日期：</i><span>"+info.goTime+"</span></p>"+
                         "<p><i>备注：</i><span>"+info.remark+"</span></p>";

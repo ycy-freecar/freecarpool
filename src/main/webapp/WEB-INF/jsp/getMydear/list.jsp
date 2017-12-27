@@ -3,12 +3,12 @@
          pageEncoding="utf-8" isELIgnored="false"%>
 <jsp:include page="common/head.jsp"/>
 <script>
-    /*(function(){
+    (function(){
         if(window.navigator.userAgent.toLowerCase().indexOf("micromessenger")<0){
             //非微信客户端打开
             window.location.href="/info/error";
         }
-    })();*/
+    })();
 </script>
 <section class="info-list-wrap">
     <link href="/public/stylesheets/mydear/datetimepicker.css" rel="stylesheet" media="screen">
@@ -31,12 +31,12 @@
         <input type="hidden" value="${infoType}" id="infoType"/>
         <!-- 选中的加类名 active -->
             <div class="active js-to-choice" data-type="1">
-                <span>人找车</span>
+                <span>车主 - 找人</span>
                 <i class="carpool-icon"></i>
             </div>
 
             <div class="js-to-choice" data-type="2">
-                <span>车找人</span>
+                <span>乘客 - 找车</span>
                 <i class="carpool-icon"></i>
             </div>
     </div>
