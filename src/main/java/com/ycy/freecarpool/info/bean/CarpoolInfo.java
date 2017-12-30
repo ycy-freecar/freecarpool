@@ -28,6 +28,8 @@ public class CarpoolInfo {
     private String remark;
     private String tripOver;
     private String goTimeShow;
+    private String validFlag;
+
 
     public int getId() {
         return id;
@@ -186,5 +188,13 @@ public class CarpoolInfo {
 
     public void setGoTimeShow(String goTimeShow) {
         this.goTimeShow = goTimeShow;
+    }
+
+    public String getValidFlag() {
+        return validFlag;
+    }
+
+    public void setValidFlag(String validFlag) {
+        this.validFlag = validFlag;
     }
 }

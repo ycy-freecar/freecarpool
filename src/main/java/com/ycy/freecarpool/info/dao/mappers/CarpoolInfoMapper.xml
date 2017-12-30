@@ -14,15 +14,16 @@
         <result column="user_count" property="userCount"/>
         <result column="create_time" property="createTime"/>
         <result column="remark" property="remark"/>
+        <result column="valid_flag" property="validFlag"/>
     </resultMap>
 
     <sql id="insertColumn">
-        from_code,from_name,to_code,to_name,info_type,mobile,go_time,user_name,user_count,create_time,remark
+        from_code,from_name,to_code,to_name,info_type,mobile,go_time,user_name,user_count,create_time,remark,valid_flag
     </sql>
 
     <insert id="insertOne" parameterType="carpoolInfo">
         insert into carpool_info (<include refid="insertColumn"/>) values (
-          #{fromCode},#{fromName},#{toCode},#{toName},#{infoType},#{mobile},#{goTime},#{userName},#{userCount},#{createTime},#{remark}
+          #{fromCode},#{fromName},#{toCode},#{toName},#{infoType},#{mobile},#{goTime},#{userName},#{userCount},#{createTime},#{remark},#{validFlag}
         )
     </insert>
 
@@ -42,6 +43,7 @@
             <if test="checkDate!=null">
                 and go_time &gt;= #{checkDate}
             </if>
+            and valid_flag='1'
         </where>
         order by create_time desc
     </select>

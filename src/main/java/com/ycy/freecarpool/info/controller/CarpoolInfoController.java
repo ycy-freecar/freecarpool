@@ -65,6 +65,7 @@ public class CarpoolInfoController {
         carpoolInfo.setToCode(toCode);
         carpoolInfo.setToName(toName);
         carpoolInfo.setGoTime(goTime);
+        carpoolInfo.setValidFlag("1");
         carpoolInfo.setCreateTime(new Date());
         carpoolInfo.setRemark(remark);
         try {
