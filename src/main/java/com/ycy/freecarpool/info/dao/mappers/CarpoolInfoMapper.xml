@@ -45,7 +45,7 @@
             </if>
             and valid_flag='1'
         </where>
-        order by create_time desc
+        order by create_time desc,go_time desc
     </select>
 
     <select id="queryCount" resultType="int" parameterType="carpoolInfo">

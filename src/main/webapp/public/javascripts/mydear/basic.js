@@ -219,6 +219,10 @@ $(document).on("click",".js-city-selection",function(){
             value: 110000
         },
         {
+            label: '天津',
+            value: 120000
+        },
+        {
             label: '邢台',
             value: 130500
         },
